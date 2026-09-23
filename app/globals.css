@@ -1527,6 +1527,13 @@ h1 > span {
   font-size: 12px;
   line-height: 1.5;
 }
+.program-card-copy time {
+  display: block;
+  margin: 0 0 14px;
+  color: #718091;
+  font: 9px "JetBrains Mono", monospace;
+  letter-spacing: 0.06em;
+}
 .program-card-footer {
   padding-top: 14px;
   border-top: 1px solid var(--line);
@@ -2637,6 +2644,15 @@ h1 > span {
   padding: clamp(86px, 11vw, 160px) 0 92px;
   border-bottom: 1px solid var(--line);
 }
+.simple-hero > .eyebrow {
+  width: fit-content;
+  padding: 8px 11px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(10, 15, 21, 0.32);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+.simple-hero > .eyebrow b { color: var(--blue); font-weight: 400; }
 .simple-hero h1 {
   max-width: 900px;
   font-size: clamp(56px, 8vw, 112px);
@@ -2688,11 +2704,28 @@ h1 > span {
   transition: border-color 0.2s ease, transform 0.2s ease;
 }
 .course-list-card:hover { border-color: rgba(59, 156, 255, 0.6); transform: translateY(-3px); }
-.course-list-card img { width: 100%; height: 100%; min-height: 210px; object-fit: cover; filter: saturate(0.8); }
-.course-list-card > div { padding: 24px; }
+.course-list-visual { min-height: 210px; position: relative; overflow: hidden; border-right: 1px solid var(--line); background: #080d13; }
+.course-list-visual img { width: 100%; height: 100%; display: block; object-fit: cover; filter: saturate(0.82) contrast(1.08); transition: transform 0.45s ease, filter 0.45s ease; }
+.course-list-card:hover .course-list-visual img { transform: scale(1.045); filter: saturate(1) contrast(1.08); }
+.course-list-image-shade { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(3, 7, 12, 0.12) 35%, rgba(3, 7, 12, 0.82) 100%); }
+.course-list-image-caption { position: absolute; left: 15px; right: 15px; bottom: 14px; z-index: 1; font-family: "JetBrains Mono", monospace; }
+.course-list-image-caption span { display: block; margin-bottom: 7px; color: #afbbc7; font-size: 8px; letter-spacing: 0.1em; }
+.course-list-image-caption b { color: white; font-size: 11px; letter-spacing: 0.08em; }
+.course-list-live { position: absolute; top: 14px; right: 15px; z-index: 1; color: #d8e1e9; font: 8px "JetBrains Mono", monospace; letter-spacing: 0.08em; }
+.course-list-live i { width: 5px; height: 5px; display: inline-block; margin-right: 6px; border-radius: 50%; background: var(--blue); box-shadow: 0 0 8px rgba(22, 119, 255, 0.7); }
+.course-list-corner { width: 18px; height: 18px; position: absolute; z-index: 2; border-color: rgba(120, 186, 255, 0.85); }
+.course-list-corner-top { top: 9px; left: 9px; border-top: 1px solid; border-left: 1px solid; }
+.course-list-corner-bottom { right: 9px; bottom: 9px; border-right: 1px solid; border-bottom: 1px solid; }
+.course-list-copy { min-width: 0; padding: 24px; display: flex; flex-direction: column; }
 .course-list-card h2 { font-size: 25px; }
-.course-list-card > div > p:not(.content-label) { color: var(--muted); font-size: 13px; line-height: 1.5; }
-.course-list-card span,
+.course-list-copy > p:not(.content-label) { color: var(--muted); font-size: 13px; line-height: 1.5; }
+.course-list-footer { display: flex; align-items: center; justify-content: space-between; margin-top: auto; padding-top: 14px; border-top: 1px solid var(--line); color: #8793a0; font: 9px "JetBrains Mono", monospace; letter-spacing: 0.08em; }
+.course-list-footer i { color: var(--blue); font-size: 13px; font-style: normal; transition: transform 0.2s ease; }
+  .post-card { grid-template-columns: 34% 1fr; }
+  .post-card-visual { min-height: 220px; }
+  .post-card-copy { padding: 18px; }
+  .post-card h2 { font-size: 21px; }
+.course-list-card:hover .course-list-footer i { transform: translateX(4px); }
 .post-card a { color: var(--blue-bright); font: 9px "JetBrains Mono", monospace; letter-spacing: 0.08em; }
 .course-detail { display: grid; grid-template-columns: minmax(300px, 0.8fr) 1fr; gap: clamp(36px, 7vw, 100px); align-items: start; }
 .course-detail img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border: 1px solid var(--line); }
@@ -2722,12 +2755,28 @@ h1 > span {
 .course-information details:last-child { border-bottom: 1px solid var(--line); }
 .course-information summary { cursor: pointer; font-size: 14px; }
 .course-information details p { margin: 12px 0 0; font-size: 13px; }
-.post-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
-.post-card { min-height: 275px; padding: 26px; display: flex; flex-direction: column; border: 1px solid var(--line); background: rgba(10, 15, 21, 0.74); }
-.post-card h2 { font-size: 28px; }
-.post-card p:not(.content-label) { color: var(--muted); line-height: 1.6; }
+.post-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+.post-card { min-height: 245px; display: grid; grid-template-columns: 38% 1fr; border: 1px solid var(--line); background: rgba(10, 15, 21, 0.74); transition: border-color 0.2s ease, transform 0.2s ease; }
+.post-card:hover { border-color: rgba(59, 156, 255, 0.6); transform: translateY(-3px); }
+.post-card-visual { min-height: 245px; position: relative; overflow: hidden; border-right: 1px solid var(--line); background: #080d13; }
+.post-card-visual img { width: 100%; height: 100%; display: block; object-fit: cover; filter: saturate(0.7) contrast(1.08); transition: transform 0.45s ease, filter 0.45s ease; }
+.post-card:hover .post-card-visual img { transform: scale(1.045); filter: saturate(1) contrast(1.08); }
+.post-card-image-shade { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(3, 7, 12, 0.12) 35%, rgba(3, 7, 12, 0.82) 100%); }
+.post-card-image-caption { position: absolute; left: 15px; right: 15px; bottom: 14px; z-index: 1; font-family: "JetBrains Mono", monospace; }
+.post-card-image-caption span { display: block; margin-bottom: 7px; color: #afbbc7; font-size: 8px; letter-spacing: 0.1em; }
+.post-card-image-caption b { color: white; font-size: 11px; letter-spacing: 0.08em; }
+.post-card-live { position: absolute; top: 14px; right: 15px; z-index: 1; color: #d8e1e9; font: 8px "JetBrains Mono", monospace; letter-spacing: 0.08em; }
+.post-card-live i { width: 5px; height: 5px; display: inline-block; margin-right: 6px; border-radius: 50%; background: var(--blue); box-shadow: 0 0 8px rgba(22, 119, 255, 0.7); }
+.post-card-corner { width: 18px; height: 18px; position: absolute; z-index: 2; border-color: rgba(120, 186, 255, 0.85); }
+.post-card-corner-top { top: 9px; left: 9px; border-top: 1px solid; border-left: 1px solid; }
+.post-card-corner-bottom { right: 9px; bottom: 9px; border-right: 1px solid; border-bottom: 1px solid; }
+.post-card-copy { min-width: 0; padding: 24px; display: flex; flex-direction: column; }
+.post-card h2 { font-size: 25px; }
+.post-card p:not(.content-label) { color: var(--muted); line-height: 1.5; }
 .post-card time { margin: 8px 0 20px; color: #718091; font: 9px "JetBrains Mono", monospace; letter-spacing: 0.06em; }
-.post-card a { margin-top: auto; }
+.post-card-footer { display: flex; align-items: center; justify-content: space-between; margin-top: auto; padding-top: 14px; border-top: 1px solid var(--line); color: #8793a0; font: 9px "JetBrains Mono", monospace; letter-spacing: 0.08em; }
+.post-card-footer i { color: var(--blue); font-size: 13px; font-style: normal; transition: transform 0.2s ease; }
+.post-card:hover .post-card-footer i { transform: translateX(4px); }
 .blog-article { max-width: 780px; }
 .blog-article time { color: var(--blue-bright); font: 10px "JetBrains Mono", monospace; letter-spacing: 0.08em; }
 .blog-article-meta { display: flex; flex-wrap: wrap; gap: 10px 20px; color: #8794a4; font: 9px "JetBrains Mono", monospace; letter-spacing: 0.07em; }
@@ -2837,7 +2886,8 @@ h1 > span {
   .simple-content { padding: 62px 0 86px; }
   .course-list, .course-detail, .post-list, .contact-layout { grid-template-columns: 1fr; }
   .course-list-card { grid-template-columns: 34% 1fr; }
-  .course-list-card > div { padding: 18px; }
+  .course-list-visual { min-height: 210px; }
+  .course-list-copy { padding: 18px; }
   .course-list-card h2 { font-size: 21px; }
   .course-detail img { max-height: 360px; }
   .course-meta { grid-template-columns: 1fr; }

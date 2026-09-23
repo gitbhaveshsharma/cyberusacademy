@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 };
 
 export default function CoursesPage() {
-    return <SitePage section="PROGRAMS / 06 PATHWAYS" title={<>CHOOSE YOUR <em>PATH.</em></>} intro="Purpose-built cybersecurity courses for people ready to practice the work security teams need done now.">
-        <div className="course-list">{courses.map((course) => <Link className="course-list-card" href={course.canonical} key={course.slug}><img src={course.image} alt={course.alt} /><div><p className="content-label">{course.code} / COURSE</p><h2>{course.title}</h2><p>{course.shortDescription}</p><span>VIEW COURSE →</span></div></Link>)}</div>
+    return <SitePage section={<>03 <b>/</b> PROGRAMS</>} title={<>CHOOSE YOUR <em>PATH.</em></>} intro="Purpose-built cybersecurity courses for people ready to practice the work security teams need done now.">
+        <div className="course-list">{courses.map((course) => <Link className="course-list-card" href={course.canonical} key={course.slug}><div className="course-list-visual"><img src={course.image} alt={course.alt} /><div className="course-list-image-shade" aria-hidden="true" /><div className="course-list-image-caption"><span>CYBERUS ACADEMY / {course.code}</span><b>LIVE CLASS</b></div><span className="course-list-live"><i /> ONLINE CLASS</span><span className="course-list-corner course-list-corner-top" aria-hidden="true" /><span className="course-list-corner course-list-corner-bottom" aria-hidden="true" /></div><div className="course-list-copy"><p className="content-label">{course.code} / COURSE</p><h2>{course.title}</h2><p>{course.shortDescription}</p><div className="course-list-footer"><span>VIEW COURSE</span><i>→</i></div></div></Link>)}</div>
     </SitePage>;
 }

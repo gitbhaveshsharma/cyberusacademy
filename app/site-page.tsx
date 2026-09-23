@@ -41,13 +41,58 @@ export function ContactDock() {
     );
 }
 
+export function SiteFooter() {
+    return (
+        <footer className="footer">
+            <div className="footer-brand">
+                <Link className="brand" href="/">
+                    <span>CYBERUS</span>
+                    <strong>ACADEMY</strong>
+                    <i aria-hidden="true" />
+                </Link>
+                <p>Practical cybersecurity education for people ready to defend what matters.</p>
+            </div>
+            <div className="footer-links">
+                <div>
+                    <span>EXPLORE</span>
+                    <Link href="/courses">Programs</Link>
+                    <Link href="/about">About Cyberus</Link>
+                    <Link href="/blog">Blog</Link>
+                </div>
+                <div>
+                    <span>SUPPORT</span>
+                    <Link href="/contact">Contact</Link>
+                    <Link href="/faq">FAQ</Link>
+                    <Link href="/terms-and-conditions">Terms</Link>
+                    <Link href="/privacy-policy">Privacy</Link>
+                </div>
+                <div className="footer-contact">
+                    <span>CONNECT</span>
+                    <a className="contact-phone" href="tel:+15550142026"><FaPhone aria-hidden="true" /> +1 555 014 2026</a>
+                    <a className="contact-whatsapp" href="https://wa.me/15550142026" target="_blank" rel="noreferrer"><FaWhatsapp aria-hidden="true" /> WhatsApp</a>
+                    <div className="footer-socials">
+                        <a href="https://facebook.com" target="_blank" rel="noreferrer" aria-label="Facebook"><FaFacebookF aria-hidden="true" /></a>
+                        <a href="https://twitter.com" target="_blank" rel="noreferrer" aria-label="X / Twitter"><FaXTwitter aria-hidden="true" /></a>
+                        <a href="https://instagram.com" target="_blank" rel="noreferrer" aria-label="Instagram"><FaInstagram aria-hidden="true" /></a>
+                    </div>
+                </div>
+            </div>
+            <div className="footer-bottom">
+                <span>© 2026 CYBERUS ACADEMY</span>
+                <span>BUILT FOR THE WORK AHEAD</span>
+                <Link href="/#top">BACK TO TOP ↑</Link>
+            </div>
+        </footer>
+    );
+}
+
 export function SitePage({
     section,
     title,
     intro,
     children,
 }: {
-    section: string;
+    section: React.ReactNode;
     title: React.ReactNode;
     intro: string;
     children: React.ReactNode;
@@ -80,81 +125,7 @@ export function SitePage({
                 <p className="simple-intro">{intro}</p>
             </section>
             <section className="simple-content">{children}</section>
-            <footer className="simple-footer">
-                <div className="simple-footer-main">
-                    <div className="simple-footer-brand">
-                        <Link className="brand" href="/">
-                            <span>CYBERUS</span>
-                            <strong>ACADEMY</strong>
-                            <i aria-hidden="true" />
-                        </Link>
-                        <p>
-                            Practical cybersecurity education for people ready to defend what
-                            matters.
-                        </p>
-                    </div>
-                    <div className="simple-footer-links">
-                        <div>
-                            <span>EXPLORE</span>
-                            <Link href="/courses">Programs</Link>
-                            <Link href="/about">About Cyberus</Link>
-                            <Link href="/blog">Blog</Link>
-                        </div>
-                        <div>
-                            <span>SUPPORT</span>
-                            <Link href="/contact">Contact</Link>
-                            <Link href="/faq">FAQ</Link>
-                            <Link href="/terms-and-conditions">Terms</Link>
-                            <Link href="/privacy-policy">Privacy</Link>
-                        </div>
-                    </div>
-                    <div className="simple-footer-contact">
-                        <span>CONNECT</span>
-                        <a className="contact-phone" href="tel:+15550142026">
-                            <FaPhone aria-hidden="true" /> +1 555 014 2026
-                        </a>
-                        <a
-                            className="contact-whatsapp"
-                            href="https://wa.me/15550142026"
-                            target="_blank"
-                            rel="noreferrer"
-                        >
-                            <FaWhatsapp aria-hidden="true" /> WhatsApp
-                        </a>
-                        <div className="simple-socials">
-                            <a
-                                href="https://facebook.com"
-                                target="_blank"
-                                rel="noreferrer"
-                                aria-label="Facebook"
-                            >
-                                <FaFacebookF aria-hidden="true" />
-                            </a>
-                            <a
-                                href="https://twitter.com"
-                                target="_blank"
-                                rel="noreferrer"
-                                aria-label="X / Twitter"
-                            >
-                                <FaXTwitter aria-hidden="true" />
-                            </a>
-                            <a
-                                href="https://instagram.com"
-                                target="_blank"
-                                rel="noreferrer"
-                                aria-label="Instagram"
-                            >
-                                <FaInstagram aria-hidden="true" />
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div className="simple-footer-bottom">
-                    <span>© 2026 CYBERUS ACADEMY</span>
-                    <span>BUILT FOR THE WORK AHEAD</span>
-                    <Link href="/#top">BACK TO TOP ↑</Link>
-                </div>
-            </footer>
+            <SiteFooter />
             <ContactDock />
         </main>
     );
