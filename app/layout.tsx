@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://cyberusacademy.com"),
+  metadataBase: new URL("https://cyberusacademy.in"),
   title: {
     default: "Cyberus Academy | Practical Cybersecurity Education",
     template: "%s | Cyberus Academy",

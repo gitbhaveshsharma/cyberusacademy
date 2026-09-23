@@ -21,7 +21,7 @@ export function ContactDock() {
         <nav className="contact-dock" aria-label="Contact options">
             <a
                 className="contact-dock-link contact-dock-phone"
-                href="tel:+15550142026"
+                href="tel:+918130443385"
                 aria-label="Call Cyberus Academy"
             >
                 <img src="/phone.avif" alt="" />
@@ -29,7 +29,7 @@ export function ContactDock() {
             </a>
             <a
                 className="contact-dock-link contact-dock-whatsapp"
-                href="https://wa.me/15550142026"
+                href="https://wa.me/918130443385"
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Message Cyberus Academy on WhatsApp"
@@ -68,8 +68,8 @@ export function SiteFooter() {
                 </div>
                 <div className="footer-contact">
                     <span>CONNECT</span>
-                    <a className="contact-phone" href="tel:+15550142026"><FaPhone aria-hidden="true" /> +1 555 014 2026</a>
-                    <a className="contact-whatsapp" href="https://wa.me/15550142026" target="_blank" rel="noreferrer"><FaWhatsapp aria-hidden="true" /> WhatsApp</a>
+                    <a className="contact-phone" href="tel:+918130443385"><FaPhone aria-hidden="true" /> +91 81304 43385</a>
+                    <a className="contact-whatsapp" href="https://wa.me/918130443385" target="_blank" rel="noreferrer"><FaWhatsapp aria-hidden="true" /> WhatsApp</a>
                     <div className="footer-socials">
                         <a href="https://facebook.com" target="_blank" rel="noreferrer" aria-label="Facebook"><FaFacebookF aria-hidden="true" /></a>
                         <a href="https://twitter.com" target="_blank" rel="noreferrer" aria-label="X / Twitter"><FaXTwitter aria-hidden="true" /></a>

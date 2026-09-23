@@ -1833,6 +1833,18 @@ h1 > span {
   color: var(--blue);
   font-style: normal;
 }
+.contact-page-section {
+  width: 100%;
+  margin: 0;
+}
+.contact-email {
+  display: inline-block;
+  margin-top: 24px;
+  color: var(--blue-bright);
+  font: 12px "JetBrains Mono", monospace;
+  letter-spacing: 0.04em;
+}
+.contact-email:hover { color: var(--text); }
 .footer {
   position: relative;
   isolation: isolate;

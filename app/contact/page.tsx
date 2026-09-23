@@ -17,39 +17,21 @@ export default function ContactPage() {
             }
             intro="Tell us where you want to go. We will help you find a practical path to get there."
         >
-            <div className="contact-layout">
-                <div>
-                    <p className="content-label">CYBERUS ACADEMY</p>
-                    <h2>Ready to do the Learn?</h2>
-                    <p>
-                        Ask about courses, learning paths, live classes or the right place
-                        to begin.
-                    </p>
-                    <a href="mailto:hello@cyberusacademy.com">hello@cyberusacademy.com</a>
+            <section className="contact contact-page-section">
+                <div className="contact-heading">
+                    <p className="eyebrow"><span /> 05 <b>/</b> CONTACT</p>
+                    <h2>LET&apos;S BUILD<br />YOUR <em>NEXT MOVE.</em></h2>
+                    <p>Tell us where you want to go. We&apos;ll help you find the right path to get there.</p>
+                    <a className="contact-email" href="mailto:hello@cyberusacademy.in">hello@cyberusacademy.in</a>
                 </div>
-                <form className="simple-form">
-                    <label>
-                        Name
-                        <input name="name" placeholder="Your name" />
-                    </label>
-                    <label>
-                        Email
-                        <input type="email" name="email" placeholder="you@company.com" />
-                    </label>
-
-                    <label>
-                        What would you like to learn?
-                        <textarea
-                            name="message"
-                            rows={4}
-                            placeholder="Tell us about your goals"
-                        />
-                    </label>
-                    <button className="button button-primary" type="submit">
-                        SEND MESSAGE <span>→</span>
-                    </button>
+                <form className="contact-form">
+                    <label><span>01 / YOUR NAME</span><input type="text" name="name" placeholder="Enter your name" required /></label>
+                    <label><span>02 / EMAIL ADDRESS</span><input type="email" name="email" placeholder="you@company.com" required /></label>
+                    <label className="message-field"><span>03 / WHAT WOULD YOU LIKE TO LEARN?</span><textarea name="message" placeholder="Tell us a little about your goals" rows={3} required /></label>
+                    <button className="contact-submit" type="submit">START THE CONVERSATION <i>→</i></button>
+                    <p className="contact-note"><i /> YOUR INFORMATION STAYS PRIVATE.</p>
                 </form>
-            </div>
+            </section>
         </SitePage>
     );
 }
