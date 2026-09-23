@@ -1,0 +1,72 @@
+[
+  {
+    "id": "learning-format",
+    "category": "Learning format",
+    "question": "Do you provide online and offline coaching?",
+    "answer": "Yes. Cyberus Academy provides both online and offline coaching when available. Our main focus is online learning because it gives students consistent access to live classes, labs, recordings and mentors from any location.",
+    "keywords": ["online cybersecurity coaching", "offline cybersecurity coaching", "cybersecurity classes"]
+  },
+  {
+    "id": "meeting-platforms",
+    "category": "Live classes",
+    "question": "Which meeting platforms do you use for online classes?",
+    "answer": "We can deliver live sessions through common meeting platforms such as Zoom and Google Meet. The platform is confirmed before a cohort begins and students receive the joining details in advance.",
+    "keywords": ["Zoom cybersecurity classes", "Google Meet cybersecurity training", "online security classes"]
+  },
+  {
+    "id": "industry-specialists",
+    "category": "Community",
+    "question": "Do students get to interact with industry specialists?",
+    "answer": "Yes. Each month we invite an industry specialist or experienced practitioner for a live community session. Students can ask questions, discuss real security work and learn how professionals approach decisions in the field.",
+    "keywords": ["cybersecurity industry experts", "security expert Q&A", "cybersecurity guest speakers"]
+  },
+  {
+    "id": "beginner-friendly",
+    "category": "Getting started",
+    "question": "Can I start if I am new to cybersecurity?",
+    "answer": "Yes. Cybersecurity Fundamentals is designed for beginners and explains the core language, systems and security concepts needed to progress. Each course also lists its recommended prerequisites.",
+    "keywords": ["beginner cybersecurity course", "start cybersecurity", "cybersecurity fundamentals"]
+  },
+  {
+    "id": "course-selection",
+    "category": "Getting started",
+    "question": "How do I choose the right course?",
+    "answer": "Start with your target work. Choose Fundamentals for a broad foundation, Ethical Hacking for authorized offensive testing, SOC for investigation, Cloud Security for cloud environments, Digital Forensics for evidence-led analysis, or GRC for risk and governance.",
+    "keywords": ["choose cybersecurity course", "best cybersecurity pathway", "cybersecurity learning path"]
+  },
+  {
+    "id": "hands-on-labs",
+    "category": "Practical learning",
+    "question": "Do the courses include hands-on labs?",
+    "answer": "Yes. Courses include guided labs and scenario-based exercises where you investigate, test, configure or communicate a security decision. Activities are designed for authorized training environments.",
+    "keywords": ["hands-on cybersecurity labs", "practical security training", "cybersecurity sandbox"]
+  },
+  {
+    "id": "weekly-time",
+    "category": "Planning",
+    "question": "How much time should I plan for each week?",
+    "answer": "Most learners should plan for live class time plus three to five hours of guided practice each week. The exact workload depends on the course, your experience and how deeply you want to explore the labs.",
+    "keywords": ["cybersecurity course workload", "security training schedule", "online cybersecurity study time"]
+  },
+  {
+    "id": "recordings",
+    "category": "Learning format",
+    "question": "Are live sessions recorded?",
+    "answer": "Where recording permissions and privacy requirements allow, session recordings or summary materials are shared with enrolled students. Live participation is encouraged because discussion and questions are part of the learning experience.",
+    "keywords": ["recorded cybersecurity classes", "online security course recordings", "live cybersecurity training"]
+  },
+  {
+    "id": "certificate",
+    "category": "Outcomes",
+    "question": "Do I receive a certificate after completing a course?",
+    "answer": "Students who complete the required course activities and final assessment receive the relevant Cyberus Academy Certificate of Completion. The certificate recognizes course participation and practical work; it is not a government license or vendor certification.",
+    "keywords": ["cybersecurity course certificate", "security training completion certificate", "Cyberus Academy certificate"]
+  },
+  {
+    "id": "support",
+    "category": "Support",
+    "question": "How can I ask questions before enrolling?",
+    "answer": "Use the contact page, call us or send a WhatsApp message. We can help you compare pathways, understand the learning format and choose a practical next step based on your goals.",
+    "keywords": ["contact cybersecurity academy", "cybersecurity course advice", "WhatsApp cybersecurity training"]
+  }
+]

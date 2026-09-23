@@ -2,25 +2,27 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { SitePage } from "../../site-page";
+import courses from "../../courses.json";
 
-const courses = {
-    "cybersecurity-fundamentals": { title: "Cybersecurity Fundamentals", description: "Build the essential knowledge behind secure systems, networks and modern threats.", image: "/courses/cyberus-academy-cybersecurity-fundamentals.avif", outcome: "Build a dependable foundation for every security pathway." },
-    "ethical-hacking-penetration-testing": { title: "Ethical Hacking & Penetration Testing", description: "Think like an attacker to find weaknesses before they are exploited.", image: "/courses/cyberus-academy-ethical-hacking-penetration-testing.avif", outcome: "Practice reconnaissance, validation and responsible reporting." },
-    "security-operations-soc": { title: "Security Operations (SOC)", description: "Investigate alerts, understand telemetry and respond with clarity.", image: "/courses/cyberus-academy-security-operations-soc.avif", outcome: "Turn noisy signals into confident security decisions." },
-    "cloud-security": { title: "Cloud Security", description: "Secure cloud environments with practical controls, visibility and confidence.", image: "/courses/cyberus-academy-cloud-security.avif", outcome: "Design stronger visibility and control across cloud workloads." },
-    "digital-forensics": { title: "Digital Forensics", description: "Trace activity, preserve evidence and turn signals into a defensible story.", image: "/courses/cyberus-academy-digital-forensics.avif", outcome: "Build an evidence-led approach to investigation." },
-    "governance-risk-compliance": { title: "Governance, Risk & Compliance", description: "Connect technical security work to policy, risk and resilient outcomes.", image: "/courses/cyberus-academy-cybersecurity-governance-risk-compliance.avif", outcome: "Translate security priorities into accountable action." },
-} as const;
+type Course = (typeof courses)[number];
+export function generateStaticParams() { return courses.map((course) => ({ slug: course.slug })); }
+function getCourse(slug: string): Course | undefined { return courses.find((course) => course.slug === slug); }
 
-type CourseSlug = keyof typeof courses;
-export function generateStaticParams() { return Object.keys(courses).map((slug) => ({ slug })); }
-export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> { const { slug } = await params; const course = courses[slug as CourseSlug]; return course ? { title: `${course.title} Course | Cyberus Academy`, description: course.description } : {}; }
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+    const { slug } = await params;
+    const course = getCourse(slug);
+    if (!course) return {};
+    return { title: `${course.title} Course | Cyberus Academy`, description: course.description, keywords: course.keywords, alternates: { canonical: course.canonical }, openGraph: { title: `${course.title} Course | Cyberus Academy`, description: course.description, url: course.canonical, images: [{ url: course.image, alt: course.alt }], type: "article" }, twitter: { card: "summary_large_image", title: `${course.title} Course | Cyberus Academy`, description: course.description, images: [course.image] } };
+}
 
 export default async function CoursePage({ params }: { params: Promise<{ slug: string }> }) {
     const { slug } = await params;
-    const course = courses[slug as CourseSlug];
+    const course = getCourse(slug);
     if (!course) notFound();
-    return <SitePage section="COURSE / PRACTICAL PATHWAY" title={<>{course.title}</>} intro={course.description}>
-        <div className="course-detail"><img src={course.image} alt={`${course.title} course`} /><div><p className="content-label">OUTCOME / {course.outcome}</p><h2>Practice before pressure.</h2><p>Work through structured lessons, guided exercises and realistic lab decisions designed to make the next step feel concrete.</p><ul><li>Scenario-led practical exercises</li><li>Guided lab environments</li><li>Feedback built around useful decisions</li></ul><Link className="button button-primary" href="/contact">START A CONVERSATION <span>→</span></Link></div></div>
+    return <SitePage section={`COURSE / ${course.code} / PRACTICAL PATHWAY`} title={<>{course.title}</>} intro={course.description}>
+        <div className="course-detail"><img src={course.image} alt={course.alt} /><div><p className="content-label">OUTCOME / {course.outcome}</p><h2>Practice before pressure.</h2><p>{course.audience}</p><div className="course-meta"><div><span>LEVEL</span><b>{course.level}</b></div><div><span>DURATION</span><b>{course.duration}</b></div><div><span>FORMAT</span><b>{course.format}</b></div></div><h3>What you will practice</h3><ul>{course.skills.map((skill) => <li key={skill}>{skill}</li>)}</ul><Link className="button button-primary" href="/contact">START A CONVERSATION <span>→</span></Link></div></div>
+        <div className="course-information"><div><p className="content-label">WHO THIS IS FOR</p><h2>Built for useful progress.</h2><p>{course.audience}</p><p><strong>Prerequisites:</strong> {course.prerequisites.join(" • ")}</p></div><div><p className="content-label">LEARNING OUTCOMES</p><ul>{course.objectives.map((objective) => <li key={objective}>{objective}</li>)}</ul></div></div>
+        <div className="course-modules"><p className="content-label">COURSE STRUCTURE</p><h2>Inside the pathway.</h2><div>{course.modules.map((module, index) => <article key={module}><span>0{index + 1}</span><h3>{module}</h3><p>Guided practice, useful context and a decision you can carry into the next exercise.</p></article>)}</div></div>
+        <div className="course-information"><div><p className="content-label">TOOLS & ASSESSMENT</p><h2>Practice with purpose.</h2><p><strong>Tools:</strong> {course.tools.join(" • ")}</p><p><strong>Assessment:</strong> {course.assessment}</p><p><strong>Certificate:</strong> {course.certification}</p></div><div><p className="content-label">COMMON QUESTIONS</p>{course.faqs.map((faq) => <details key={faq.question}><summary>{faq.question}</summary><p>{faq.answer}</p></details>)}</div></div>
     </SitePage>;
 }

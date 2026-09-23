@@ -1,0 +1,65 @@
+[
+  {
+    "slug": "build-a-cybersecurity-practice-habit",
+    "number": "01",
+    "title": "How to build a cybersecurity practice habit",
+    "excerpt": "A useful loop for turning security concepts into repeatable decisions.",
+    "description": "Learn a practical loop for turning cybersecurity concepts into repeatable decisions through focused practice.",
+    "date": "2026-09-01",
+    "updated": "2026-09-03",
+    "author": {"name": "Cyberus Academy Team", "role": "Security Education"},
+    "readingTime": "4 min read",
+    "category": "Learning",
+    "tags": ["Learning", "Practice", "Cybersecurity Careers"],
+    "keywords": ["cybersecurity learning", "security practice", "cybersecurity career", "hands-on cybersecurity"],
+    "content": [
+      "Security knowledge becomes useful when it can guide a decision under pressure.",
+      "Start with a small scenario, identify the signal, write down the assumptions and choose one next action. Then review what changed and repeat the exercise with a new condition.",
+      "This is why practical labs matter: they create a safe place to build judgement before the stakes are real."
+    ],
+    "sections": [{"heading": "A small loop that compounds", "body": "Choose one observable signal, state what you know, decide on a next action and record what changed. Repeating that loop builds judgement faster than collecting disconnected facts."}, {"heading": "Make practice specific", "body": "A useful exercise has a clear starting condition, a decision to make and a short review. Keep the scenario small enough to finish and repeat."}],
+    "links": [{ "label": "Explore practical courses", "href": "/courses" }]
+  },
+  {
+    "slug": "what-a-good-soc-investigation-looks-like",
+    "number": "02",
+    "title": "What a good SOC investigation looks like",
+    "excerpt": "Start with the signal, preserve context and communicate the next action.",
+    "description": "A clear framework for triaging security alerts, preserving context and communicating the next action in a SOC.",
+    "date": "2026-08-18",
+    "updated": "2026-08-20",
+    "author": {"name": "Cyberus Academy Team", "role": "Security Operations"},
+    "readingTime": "5 min read",
+    "category": "Security Operations",
+    "tags": ["SOC", "Alert Triage", "Investigation"],
+    "keywords": ["SOC investigation", "alert triage", "security operations", "SIEM analysis"],
+    "content": [
+      "A strong investigation begins by resisting the urge to jump straight to a conclusion.",
+      "Capture the original signal, identify the affected asset, establish a timeline and separate observed facts from working hypotheses.",
+      "The final step is communication. A useful handoff tells the next person what happened, why it matters and what should happen next."
+    ],
+    "sections": [{"heading": "Preserve the original signal", "body": "Capture the alert, timestamp, affected asset and source before adding interpretation. Context is easiest to lose at the start of an investigation."}, {"heading": "End with a useful handoff", "body": "A good handoff separates facts from hypotheses and makes the next action obvious to the analyst who receives it."}],
+    "links": [{ "label": "Explore the SOC course", "href": "/courses/security-operations-soc" }]
+  },
+  {
+    "slug": "learning-security-without-losing-the-thread",
+    "number": "03",
+    "title": "Learning security without losing the thread",
+    "excerpt": "A focused approach to building capability across a wide technical field.",
+    "description": "Use a focused learning system to build cybersecurity capability without getting lost in the size of the field.",
+    "date": "2026-07-29",
+    "updated": "2026-08-01",
+    "author": {"name": "Cyberus Academy Team", "role": "Security Education"},
+    "readingTime": "4 min read",
+    "category": "Career Development",
+    "tags": ["Career", "Study Plan", "Security Skills"],
+    "keywords": ["cybersecurity career advice", "security skills", "cybersecurity study plan", "security training"],
+    "content": [
+      "Cybersecurity is broad enough to make every learner feel behind. The answer is not to study everything at once.",
+      "Choose a practical direction, build a small vocabulary of core concepts and spend most of your time applying them in a lab or scenario.",
+      "Depth in one useful path gives you the context to explore the next one with confidence."
+    ],
+    "sections": [{"heading": "Choose a useful direction", "body": "A focused path gives your study time a job. Pick the kind of decisions you want to become good at, then choose concepts and labs that support that direction."}, {"heading": "Review before you expand", "body": "Before adding another topic, revisit what you can already explain and perform. Consolidation makes the next layer easier to absorb."}],
+    "links": [{ "label": "Find your learning path", "href": "/courses" }]
+  }
+]

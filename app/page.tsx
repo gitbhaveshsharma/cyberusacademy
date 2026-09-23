@@ -737,6 +737,7 @@ export default function Home() {
           <div>
             <span>SUPPORT</span>
             <Link href="/contact">Contact</Link>
+            <Link href="/faq">FAQ</Link>
             <Link href="/terms-and-conditions">Terms</Link>
             <Link href="/privacy-policy">Privacy</Link>
           </div>
