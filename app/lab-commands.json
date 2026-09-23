@@ -1,0 +1,52 @@
+{
+  "shell": {
+    "echo cyberus": {
+      "lines": [
+        { "text": "CYBERUS ACADEMY // PRACTICE NODE 04", "tone": "highlight" },
+        { "text": "defend what matters.", "tone": "ok" }
+      ]
+    },
+    "whoami": {
+      "lines": [
+        { "text": "analyst", "tone": "highlight" },
+        { "text": "role: blue team trainee / clearance: sandbox", "tone": "muted" }
+      ]
+    },
+    "pwd": {
+      "lines": [
+        { "text": "/opt/cyberus/labs/session-04", "tone": "highlight" }
+      ]
+    },
+    "ls": {
+      "lines": [
+        { "text": "evidence/  notes.md  targets.txt  telemetry.json", "tone": "highlight" },
+        { "text": "4 objects / read-only training filesystem", "tone": "muted" }
+      ]
+    },
+    "cat notes.md": {
+      "lines": [
+        { "text": "[brief] Trace the anomaly, validate the signal, document the decision.", "tone": "highlight" },
+        { "text": "hint: inspect --event 7F:AA:91", "tone": "warn" }
+      ]
+    },
+    "nmap 192.168.48.0/24": {
+      "lines": [
+        { "text": "Starting Nmap 7.94 (sandbox simulation)", "tone": "muted" },
+        { "text": "5 hosts up / 1 suspicious service / 0 packets sent outside the lab", "tone": "ok" },
+        { "text": "192.168.48.88  open  4444/tcp  possible-c2", "tone": "warn" }
+      ]
+    },
+    "curl http://192.168.48.88:8080/health": {
+      "lines": [
+        { "text": "HTTP/1.1 200 OK", "tone": "ok" },
+        { "text": "server: training-gateway / x-lab-state: suspicious", "tone": "highlight" },
+        { "text": "response captured in evidence/endpoint-48.88.json", "tone": "muted" }
+      ]
+    }
+  },
+  "aliases": {
+    "echo": "echo cyberus",
+    "nmap": "nmap 192.168.48.0/24",
+    "curl": "curl http://192.168.48.88:8080/health"
+  }
+}
