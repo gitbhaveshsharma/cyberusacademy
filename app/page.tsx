@@ -1,7 +1,10 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 import labCommandConfig from "./lab-commands.json";
+import { FaFacebookF, FaInstagram, FaPhone, FaWhatsapp, FaXTwitter } from "react-icons/fa6";
+import { ContactDock } from "./site-page";
 
 const navItems = [
   { label: "PROGRAMS", href: "#programs" },
@@ -714,11 +717,11 @@ export default function Home() {
 
       <footer className="footer">
         <div className="footer-brand">
-          <a className="brand" href="#top">
+          <Link className="brand" href="/">
             <span>CYBERUS</span>
             <strong>ACADEMY</strong>
             <i aria-hidden="true" />
-          </a>
+          </Link>
           <p>
             Practical cybersecurity education for people ready to defend what
             matters.
@@ -727,23 +730,25 @@ export default function Home() {
         <div className="footer-links">
           <div>
             <span>EXPLORE</span>
-            <a href="#programs">Programs</a>
-            <a href="#why-cyberus">Why Cyberus</a>
-            <a href="#learning">Lab View</a>
+            <Link href="/courses">Programs</Link>
+            <Link href="/about">About Cyberus</Link>
+            <Link href="/blog">Blog</Link>
           </div>
           <div>
-            <span>CONNECT</span>
-            <a href="#about">About</a>
-            <a href="#contact">Contact</a>
-            <a href="#top">Back to top ↑</a>
+            <span>SUPPORT</span>
+            <Link href="/contact">Contact</Link>
+            <Link href="/terms-and-conditions">Terms</Link>
+            <Link href="/privacy-policy">Privacy</Link>
           </div>
+          <div className="footer-contact"><span>CONNECT</span><a className="contact-phone" href="tel:+15550142026"><FaPhone aria-hidden="true" /> +1 555 014 2026</a><a className="contact-whatsapp" href="https://wa.me/15550142026" target="_blank" rel="noreferrer"><FaWhatsapp aria-hidden="true" /> WhatsApp</a><div className="footer-socials"><a href="https://facebook.com" target="_blank" rel="noreferrer" aria-label="Facebook"><FaFacebookF aria-hidden="true" /></a><a href="https://twitter.com" target="_blank" rel="noreferrer" aria-label="X / Twitter"><FaXTwitter aria-hidden="true" /></a><a href="https://instagram.com" target="_blank" rel="noreferrer" aria-label="Instagram"><FaInstagram aria-hidden="true" /></a></div></div>
         </div>
         <div className="footer-bottom">
           <span>© 2026 CYBERUS ACADEMY</span>
           <span>BUILT FOR THE WORK AHEAD</span>
-          <i>● SYSTEM ONLINE</i>
+          <Link href="/#top">BACK TO TOP ↑</Link>
         </div>
       </footer>
+      <ContactDock />
     </main>
   );
 }
